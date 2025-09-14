@@ -42,8 +42,14 @@ npm run deploy:preview
 # Build the project
 npm run build
 
-# Deploy to Cloudflare Pages
+# Deploy to Cloudflare Pages (directory as positional argument)
 npx wrangler pages deploy dist
+
+# Deploy with project name (if you have multiple projects)
+npx wrangler pages deploy dist --project-name=piragh-website
+
+# Deploy to a specific branch
+npx wrangler pages deploy dist --branch=production
 ```
 
 ### Build Configuration

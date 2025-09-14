@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "npm run build && npx wrangler pages deploy dist",
-    "deploy:preview": "npm run build && npx wrangler pages deploy dist --compatibility-date=2024-01-15"
+    "deploy:preview": "npm run build && npx wrangler pages deploy dist"
   },
   "dependencies": {
     "lucide-react": "^0.344.0",
