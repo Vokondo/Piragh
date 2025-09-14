@@ -43,7 +43,7 @@ npm run deploy:preview
 npm run build
 
 # Deploy to Cloudflare Pages
-wrangler pages deploy dist
+npx wrangler pages deploy dist
 ```
 
 ### Build Configuration

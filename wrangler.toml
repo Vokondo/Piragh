@@ -12,3 +12,8 @@ cwd = "."
 # Environment variables
 [vars]
 NODE_ENV = "production"
+
+# Pages configuration
+[pages]
+build = { command = "npm run build" }
+output_directory = "dist"
