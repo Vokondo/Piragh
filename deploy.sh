@@ -1,3 +1,3 @@
 #!/bin/bash
 npm run build
-npx wrangler pages deploy dist
+wrangler pages deploy dist
