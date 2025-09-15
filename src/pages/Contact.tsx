@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle, AlertCircle, Users, Building, Shield, FileText } from 'lucide-react';
+import { FadeInUp, FadeInLeft, FadeInRight, ScaleIn, StaggerContainer, StaggerItem } from '../components/animations';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -145,39 +146,45 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="bg-who-blue text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <h1 className="font-heading font-bold text-3xl lg:text-4xl mb-4">
+          <FadeInUp>
+            <div className="max-w-4xl">
+              <h1 className="font-heading font-bold text-3xl lg:text-4xl mb-4">
             Contact Us
           </h1>
-            <p className="font-body text-lg text-blue-100 leading-relaxed">
+              <p className="font-body text-lg text-blue-100 leading-relaxed">
             Get in touch with PIRAG for inquiries, support, or partnership opportunities.
-              We're here to help with ethical recruitment, worker protection, and industry standards.
-          </p>
-          </div>
+                We're here to help with ethical recruitment, worker protection, and industry standards.
+            </p>
+            </div>
+          </FadeInUp>
         </div>
       </section>
 
       {/* Contact Information Cards */}
       <section className="py-12 bg-who-lightgray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-2xl text-center text-who-darkgray mb-8">
-            Get in Touch
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <FadeInUp>
+            <h2 className="font-heading font-bold text-2xl text-center text-who-darkgray mb-8">
+              Get in Touch
+            </h2>
+          </FadeInUp>
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
-              <div key={index} className="bg-white rounded-sm shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
-                <div className={`w-12 h-12 bg-${info.color}/10 rounded-sm flex items-center justify-center mb-4`}>
-                  <info.icon className={`h-6 w-6 text-${info.color}`} />
+              <StaggerItem key={index} direction="up">
+                <div className="bg-white rounded-sm shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
+                  <div className={`w-12 h-12 bg-${info.color}/10 rounded-sm flex items-center justify-center mb-4`}>
+                    <info.icon className={`h-6 w-6 text-${info.color}`} />
+                  </div>
+                  <h3 className="font-heading font-bold text-lg text-who-darkgray mb-3">{info.title}</h3>
+                  <div className="space-y-1">
+                    {info.details.map((detail, idx) => (
+                      <p key={idx} className="font-body text-sm text-who-gray">{detail}</p>
+                    ))}
+                  </div>
                 </div>
-                <h3 className="font-heading font-bold text-lg text-who-darkgray mb-3">{info.title}</h3>
-                <div className="space-y-1">
-                  {info.details.map((detail, idx) => (
-                    <p key={idx} className="font-body text-sm text-who-gray">{detail}</p>
-                  ))}
-                </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -186,7 +193,8 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Contact Form */}
-            <div>
+            <FadeInLeft>
+              <div>
               <h2 className="font-heading font-bold text-2xl text-who-darkgray mb-4">
                 Send us a Message
               </h2>
@@ -329,13 +337,15 @@ const Contact = () => {
                   )}
                 </button>
               </form>
-            </div>
+              </div>
+            </FadeInLeft>
 
             {/* Location and Additional Info */}
-            <div>
+            <FadeInRight>
+              <div>
               <h2 className="font-heading font-bold text-2xl text-who-darkgray mb-4">
                 Visit Our Office
-              </h2>
+          </h2>
               
               {/* Map Placeholder */}
               <div className="bg-who-lightgray rounded-sm border border-gray-200 h-48 mb-6 flex items-center justify-center">
@@ -377,7 +387,8 @@ const Contact = () => {
                   </a>
                 </div>
               </div>
-            </div>
+              </div>
+            </FadeInRight>
           </div>
         </div>
       </section>
@@ -385,51 +396,59 @@ const Contact = () => {
       {/* Department Contacts */}
       <section className="py-12 bg-who-lightgray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-2xl text-center text-who-darkgray mb-8">
-            Department Contacts
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <FadeInUp>
+            <h2 className="font-heading font-bold text-2xl text-center text-who-darkgray mb-8">
+              Department Contacts
+            </h2>
+          </FadeInUp>
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {departments.map((dept, index) => (
-              <div key={index} className="bg-white rounded-sm shadow-sm border border-gray-200 p-4 hover:shadow-md transition-shadow">
-                <div className="flex items-start">
-                  <div className="w-10 h-10 bg-who-blue/10 rounded-sm flex items-center justify-center mr-3 flex-shrink-0">
-                    <dept.icon className="h-5 w-5 text-who-blue" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-heading font-bold text-lg text-who-darkgray mb-1">{dept.title}</h3>
-                    <p className="font-body text-who-gray mb-3 text-sm">{dept.description}</p>
-                    <div className="space-y-1">
-                      <div className="flex items-center">
-                        <Mail className="h-3 w-3 text-who-gray mr-2" />
-                        <span className="font-body text-sm text-who-blue">{dept.contact}</span>
-                      </div>
-                      <div className="flex items-center">
-                        <Phone className="h-3 w-3 text-who-gray mr-2" />
-                        <span className="font-body text-sm text-who-gray">{dept.phone}</span>
+              <StaggerItem key={index} direction="up">
+                <div className="bg-white rounded-sm shadow-sm border border-gray-200 p-4 hover:shadow-md transition-shadow">
+                  <div className="flex items-start">
+                    <div className="w-10 h-10 bg-who-blue/10 rounded-sm flex items-center justify-center mr-3 flex-shrink-0">
+                      <dept.icon className="h-5 w-5 text-who-blue" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-heading font-bold text-lg text-who-darkgray mb-1">{dept.title}</h3>
+                      <p className="font-body text-who-gray mb-3 text-sm">{dept.description}</p>
+                      <div className="space-y-1">
+                        <div className="flex items-center">
+                          <Mail className="h-3 w-3 text-who-gray mr-2" />
+                          <span className="font-body text-sm text-who-blue">{dept.contact}</span>
+                        </div>
+                        <div className="flex items-center">
+                          <Phone className="h-3 w-3 text-who-gray mr-2" />
+                          <span className="font-body text-sm text-who-gray">{dept.phone}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* FAQ Section */}
       <section className="py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-2xl text-center text-who-darkgray mb-8">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-4">
+          <FadeInUp>
+            <h2 className="font-heading font-bold text-2xl text-center text-who-darkgray mb-8">
+              Frequently Asked Questions
+            </h2>
+          </FadeInUp>
+          <StaggerContainer className="space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-sm shadow-sm border border-gray-200 p-4">
-                <h3 className="font-heading font-bold text-lg text-who-darkgray mb-2">{faq.question}</h3>
-                <p className="font-body text-who-gray leading-relaxed text-sm">{faq.answer}</p>
-              </div>
+              <StaggerItem key={index} direction="up">
+                <div className="bg-white rounded-sm shadow-sm border border-gray-200 p-4">
+                  <h3 className="font-heading font-bold text-lg text-who-darkgray mb-2">{faq.question}</h3>
+                  <p className="font-body text-who-gray leading-relaxed text-sm">{faq.answer}</p>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
     </div>
