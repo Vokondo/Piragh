@@ -193,8 +193,7 @@ const Homepage = () => {
                   </Link>
                 </div>
               </div>
-              </div>
-            </StaggerItem>
+            </div>
 
             {/* Recruitment Agencies */}
             <div className="bg-white rounded-sm shadow-sm border border-gray-200 overflow-hidden group hover:shadow-lg transition-all duration-300">
@@ -222,8 +221,7 @@ const Homepage = () => {
                   </Link>
                 </div>
               </div>
-              </div>
-            </StaggerItem>
+            </div>
 
             {/* Partners & Policymakers */}
             <div className="bg-white rounded-sm shadow-sm border border-gray-200 overflow-hidden group hover:shadow-lg transition-all duration-300">
@@ -250,7 +248,6 @@ const Homepage = () => {
                     View Publications
                   </Link>
                 </div>
-              </div>
               </div>
             </div>
           </div>
