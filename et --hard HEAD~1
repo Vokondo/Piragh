@@ -1,0 +1,5 @@
+[33m6d9177d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m Add comprehensive scroll animations to all pages
+[33m8576dcd[m Fix mobile navigation and add scroll-to-top functionality
+[33mff13349[m Remove invalid routes configuration from wrangler.jsonc
+[33m25fdf81[m Remove problematic _redirects and _routes.json files
+[33mebe1697[m Fix _redirects infinite loop by excluding assets
