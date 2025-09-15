@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown, Phone, Mail, MapPin } from 'lucide-react';
 import piragLogo from '../assets/logo.png';
 
@@ -9,6 +9,11 @@ const Header = () => {
   const [membershipDropdown, setMembershipDropdown] = useState(false);
   const [jobSeekersDropdown, setJobSeekersDropdown] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleMobileLinkClick = () => {
+    setIsMenuOpen(false);
+  };
 
   const isActive = (path: string) => {
     return location.pathname === path || location.pathname.startsWith(path);
@@ -232,19 +237,19 @@ const Header = () => {
           {isMenuOpen && (
             <div className="lg:hidden py-4 border-t border-gray-100">
               <div className="flex flex-col space-y-1">
-                <Link to="/" className="px-4 py-3 text-sm text-who-darkgray hover:text-who-blue hover:bg-gray-50 rounded-sm transition-colors">
+                <Link to="/" onClick={handleMobileLinkClick} className="px-4 py-3 text-sm text-who-darkgray hover:text-who-blue hover:bg-gray-50 rounded-sm transition-colors">
                   Home
                 </Link>
                 <div className="px-4 py-2">
                   <p className="text-sm font-semibold text-who-darkgray mb-2">About</p>
                   <div className="pl-4 space-y-1">
-                    <Link to="/about/who-we-are" className="block py-2 text-sm text-who-gray hover:text-who-blue transition-colors">
+                    <Link to="/about/who-we-are" onClick={handleMobileLinkClick} className="block py-2 text-sm text-who-gray hover:text-who-blue transition-colors">
                       Who We Are
                     </Link>
-                    <Link to="/about/goals-objectives" className="block py-2 text-sm text-who-gray hover:text-who-blue transition-colors">
+                    <Link to="/about/goals-objectives" onClick={handleMobileLinkClick} className="block py-2 text-sm text-who-gray hover:text-who-blue transition-colors">
                       Goals & Objectives
                     </Link>
-                    <Link to="/about/partners" className="block py-2 text-sm text-who-gray hover:text-who-blue transition-colors">
+                    <Link to="/about/partners" onClick={handleMobileLinkClick} className="block py-2 text-sm text-who-gray hover:text-who-blue transition-colors">
                       Our Partners
                     </Link>
                   </div>
@@ -252,39 +257,40 @@ const Header = () => {
                 <div className="px-4 py-2">
                   <p className="text-sm font-semibold text-who-darkgray mb-2">Membership</p>
                   <div className="pl-4 space-y-1">
-                    <Link to="/membership/benefits" className="block py-2 text-sm text-who-gray hover:text-who-blue transition-colors">
+                    <Link to="/membership/benefits" onClick={handleMobileLinkClick} className="block py-2 text-sm text-who-gray hover:text-who-blue transition-colors">
                       Membership Benefits
                     </Link>
-                    <Link to="/membership/requirements" className="block py-2 text-sm text-who-gray hover:text-who-blue transition-colors">
+                    <Link to="/membership/requirements" onClick={handleMobileLinkClick} className="block py-2 text-sm text-who-gray hover:text-who-blue transition-colors">
                       Requirements
                     </Link>
-                    <Link to="/members/directory" className="block py-2 text-sm text-who-gray hover:text-who-blue transition-colors">
+                    <Link to="/members/directory" onClick={handleMobileLinkClick} className="block py-2 text-sm text-who-gray hover:text-who-blue transition-colors">
                       Member Directory
                     </Link>
                   </div>
                 </div>
-                <Link to="/services" className="px-4 py-3 text-sm text-who-darkgray hover:text-who-blue hover:bg-gray-50 rounded-sm transition-colors">
+                <Link to="/services" onClick={handleMobileLinkClick} className="px-4 py-3 text-sm text-who-darkgray hover:text-who-blue hover:bg-gray-50 rounded-sm transition-colors">
                   Services
                 </Link>
                 <div className="px-4 py-2">
                   <p className="text-sm font-semibold text-who-darkgray mb-2">For Job Seekers</p>
                   <div className="pl-4 space-y-1">
-                    <Link to="/job-seekers/safe-migration-guide" className="block py-2 text-sm text-who-gray hover:text-who-blue transition-colors">
+                    <Link to="/job-seekers/safe-migration-guide" onClick={handleMobileLinkClick} className="block py-2 text-sm text-who-gray hover:text-who-blue transition-colors">
                       Safe Migration Guide
                     </Link>
-                    <Link to="/job-seekers/grievance" className="block py-2 text-sm text-who-gray hover:text-who-blue transition-colors">
+                    <Link to="/job-seekers/grievance" onClick={handleMobileLinkClick} className="block py-2 text-sm text-who-gray hover:text-who-blue transition-colors">
                       Report a Grievance
                     </Link>
                   </div>
                 </div>
-                <Link to="/news-resources" className="px-4 py-3 text-sm text-who-darkgray hover:text-who-blue hover:bg-gray-50 rounded-sm transition-colors">
+                <Link to="/news-resources" onClick={handleMobileLinkClick} className="px-4 py-3 text-sm text-who-darkgray hover:text-who-blue hover:bg-gray-50 rounded-sm transition-colors">
                   Resources
                 </Link>
-                <Link to="/contact" className="px-4 py-3 text-sm text-who-darkgray hover:text-who-blue hover:bg-gray-50 rounded-sm transition-colors">
+                <Link to="/contact" onClick={handleMobileLinkClick} className="px-4 py-3 text-sm text-who-darkgray hover:text-who-blue hover:bg-gray-50 rounded-sm transition-colors">
                   Contact
                 </Link>
                 <Link 
                   to="/membership/benefits"
+                  onClick={handleMobileLinkClick}
                   className="mx-4 mt-4 bg-who-blue hover:bg-who-blue/90 text-white px-6 py-3 text-sm font-semibold transition-colors rounded-sm text-center shadow-sm"
                 >
                   Join PIRAG
